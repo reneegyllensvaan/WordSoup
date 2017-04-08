@@ -1,0 +1,161 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf8">
+	<link rel="stylesheet" href="css/lexicon.css">
+	
+	<script>
+	// When the user clicks on div, open the popup
+	function onOpenPopup(target) {
+		var popup = target.firstElementChild;
+		popup.classList.toggle("show");
+	}
+	
+	function onGapChange(target) {
+		if (target.value == target.getAttribute("gap"))
+			target.className = "correct_gap";
+		else
+			target.className = "wrong_gap";
+	}
+	
+	function onShowTranslation(translation,target) {
+		alert(translation);
+	}
+	</script>
+</head>
+<body>
+	<div style="width: 1200px;">
+	<table>
+		<tr>
+			<td>
+				<img src="images/smoer-stroesocker-vaniljsocker.jpg" alt="smör, strösocker, vaniljsocker" title="Smör, strösocker, vaniljsocker" />
+				<br>
+				<p>Smör, strösocker, vaniljsocker.</p>
+			</td>
+			<td>
+				<img src="images/smoer-socker-vispat.jpg" alt="smör och socker vispat" title="Smör och socker vispat" />
+				<br>
+				<p>Smör och socker vispat.</p>
+			</td>
+		</tr>
+	</table>
+
+	<p><span onclick='onShowTranslation("أمز",this)'>Mät</span> upp <span onclick='onShowTranslation("أزبدة")'>smör</span>, strösocker och vaniljsocker i en bunke. Låt stå framme i rumstemperatur tills <input class="gap" type="text" gap="smöret" onchange="onGapChange(this)"/> blivit rumsvarmt. Skär gärna smöret i mindre bitar så går det fort.</p>
+	<p>Vispa till en jämn <input class="gap" type="text" gap="smet"/> med elvisp.</p>
+
+	<ul class="spaceLargeTop">
+		<li>150 g <div class="popup" onclick="onOpenPopup(this)">smör
+					<span class="popuptext">
+						<img src="images/smör.jpg" width="150" height="150"/>
+						<p>زبدة</p>
+					</span>
+				  </div>
+		<li>1.5 dl <div class="popup" onclick="onOpenPopup(this)">strösocker
+					<span class="popuptext">
+						<img src="images/strösocker.jpg" width="150" height="150"/>
+						<p>كر,,"سك</p>
+					</span>
+				  </div>
+		<li>1 msk <div class="popup" onclick="onOpenPopup(this)">vaniljsocker
+					<span class="popuptext">
+						<img src="images/vaniljsocker.jpg" width="150" height="150"/>
+					</span>
+				  </div>
+	</ul>
+
+	<hr/>
+
+	<table>
+		<tr>
+			<td>
+				<img src="images/vatten-snabbkaffepulver.jpg" alt="vatten och snabbkaffepulver" title="Vatten och snabbkaffepulver"/>
+				<br>
+				<p>Vatten och snabbkaffepulver.</p>
+			</td>
+		</tr>
+	</table>
+
+	<p>Om du väljer alternativet kaffe med snabbkaffepulver - blanda då <input class="gap" type="text" gap="snabbkaffepulver"/> med vatten. 
+	(Det går också bra att använda bryggt <input class="gap" type="text" gap="kaffe"/> eller något av de andra alternativen vanligt vatten eller apelsinjuice beroende på vilken smak man vill ha på sina chokladbollar, se ingredienslistan.)</p>
+	<ul class="spaceLargeTop">
+		<li>2-3 tsk <a name="foodPopup" href="/info/snabbkaffepulver.html">snabbkaffepulver</a>
+		<b>och</b> 
+	    2-3 msk <a name="foodPopup" href="/info/vatten.html">vatten</a></li>
+	</ul>
+
+	<hr/>
+	
+	<table>
+		<tr>
+			<td>
+				<img src="images/ingredienser-chokladbollssmet.jpg" alt="ingredienser till chokladbollssmeten tillsatta" title="Ingredienser till chokladbollssmeten tillsatta" />
+				<br>
+				<p>Ingredienser till chokladbollssmeten tillsatta.</p>
+			</td>
+			<td>
+				<img src="images/chokladbollssmet.jpg" alt="chokladbollssmeten" title="Chokladbollssmeten" />
+				<br>
+				<p>Chokladbollssmeten.</p>
+			</td>
+		</tr>
+	</table>
+
+	<p>Tillsätt kaffe (eller vatten eller <input class="gap" type="text" gap="kaffe"/>), kakao, havregryn och kokosflingor och rör till en jämn smet med elvisp. Kör gärna lite extra, gärna ca 5 minuter med elvispen så blir smeten ännu godare.</p>
+
+	<ul class="spaceLargeTop">
+		<li>2-3 msk bryggt kaffe
+			<ul>
+				<li><b>eller</b>  2-3 tsk <a name="foodPopup" href="/info/snabbkaffepulver.html">snabbkaffepulver</a> 
+				<b>och</b> 
+				2-3 msk <a name="foodPopup" href="/info/vatten.html">vatten</a></li>
+				<li><b>eller</b>  2-3 msk <a name="foodPopup" href="/info/vatten.html">vatten</a></li>
+				<li><b>eller</b>  2-3 msk <a name="foodPopup" href="/info/apelsinjuice.html">apelsinjuice</a></li>
+			</ul>
+		</li>
+		<li>4 msk <a name="foodPopup" href="/info/kakao.html">kakao</a></li>
+		<li>3.5 dl <a name="foodPopup" href="/info/havregryn.html">havregryn</a></li>
+		<li>1 dl <a name="foodPopup" href="/info/kokosflingor.html">kokosflingor</a></li>
+	</ul>
+
+	<hr/>
+	
+	<table>
+		<tr>
+			<td>
+				<img src="images/chokladboll-kokosflingor.jpg" alt="chokladboll och kokosflingor" title="Chokladboll och kokosflingor" />
+				<br>
+				<p>Chokladboll och kokosflingor.</p>
+			</td>
+			<td>
+				<img src="images/chokladbollssmet.jpg" alt="chokladbollssmeten" title="Chokladbollssmeten" />
+				<br>
+				<p>Chokladboll rullad i kokosflingor.</p>
+			</td>
+		</tr>
+	</table>
+
+	<p>Om smeten är väldigt lös och kletig kan man ställa in den i kylen eller frysen en stund innan man rullar bollar.</p>
+	<p>Häll upp kokosflingor eller pärlsocker i en djup tallrik. Rulla bollar i valfri storlek av smeten och rulla bollarna i kokosflingorna eller pärlsockret.</p>
+	<p>Lägg chokladbollarna i en burk och förvara i kylskåp. De går också att frysa in.</p>
+
+	<ul class="spaceLargeTop">
+		<li>ca 0.75 dl <a name="foodPopup" href="/info/kokosflingor.html">kokosflingor</a>
+		<ul>
+			<li><b>eller</b>  ca 0.75 dl <a name="foodPopup" href="/info/paerlsocker.html">pärlsocker</a></li>
+		</ul>
+		</li>
+	</ul>
+	
+	<hr/>
+	
+	<table>
+		<tr>
+			<td>
+				<img src="images/serverade-chokladbollar.jpg" alt="serverade chokladbollar" title="Serverade chokladbollar" />
+				<br>
+				<p>Serverade chokladbollar.</p>
+			</td>
+		</tr>
+	</table>
+
+	<p>Servera chokladbollarna kylskåpskalla, då är de godast tycker jag. Man kan annars låta dem stå framme i rumstemperatur en stund så blir de mjukare men även kladdigare.</p>
+	</div>
+</body>
