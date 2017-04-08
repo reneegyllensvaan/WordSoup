@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  <link rel="stylesheet" type="text/css" href="css/master.css" />
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	  
+	  <nav>
+			<div class="nav-wrapper">
+				<font class="recipe-heading">Pannkakor med sylt</font>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+				</ul>
+			</div>
+		</nav>
+	  
+	  <div class="ingredient-popup-hiddendiv"></div>
+	  
+	  <div class="row">
+		<div class="col s12">
+		<div class="container ingredients-container">
+		
+		
+		<h4>Ingredienser</h4>
+		<ul class="collection">
+			<li class="collection-item">1 dl florsocker<a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="florsocker" >zoom_in</i></a></li>
+			<li class="collection-item">4 dl vetemjöl <a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="vetemjöl" >zoom_in</i></a></li>
+			<li class="collection-item">2 msk smör <a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="smör" >zoom_in</i></a></li>
+			<li class="collection-item">2 dl mjölk <a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="mjölk">zoom_in</i></a></li>
+		</ul>
+		
+		
+		<h4>Instruktioner </h4>
+		<div class="row instruction z-depth-1">
+			<div class="col s8">
+				This is a description of a step etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc 
+			</div>
+			<div class="col s4 ">
+				<div class="instruction-image-container" >
+					<img src="https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/recipe-collections/collection-image/2013/05/rosewater-raspberry-sponge-cake.jpg?itok=OVpUSQm9">
+					<img src="https://www.bbcgoodfood.com/sites/default/files/styles/category_retina/public/recipe-collections/collection-image/2013/05/rosewater-raspberry-sponge-cake.jpg?itok=OVpUSQm9">
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="row instruction z-depth-1">
+			<div class="col s8">
+				This is a description of a  second step etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc etc 
+			</div>
+			<div class="col s4 ">
+				<div class="instruction-image-container" >
+					<img src="http://www.pcrm.org/sites/default/files/styles/large/public/tofu-isoflavones.jpg?itok=kkJ9JFOp">
+					<img src="http://www.pcrm.org/sites/default/files/styles/large/public/tofu-isoflavones.jpg?itok=kkJ9JFOp">
+				</div>
+				
+			</div>
+		</div>
+		
+
+		</div>
+
+		</div>
+	</div>
+	  
+	  
+	<div class="card ingredient-popup-card red lighten-4">
+		<div class="card-image">
+			<img src="http://www.sandt.nu/wp-content/uploads/2013/10/GF-mj%C3%B6l.jpg">
+		</div>
+		<div class="card-content">
+			<div class="row">
+				<div class="col s6">
+					<p class="swedish left-align">Vetemjöl</p>
+				</div>
+				<div class="col s6">
+					<p class="arabic right-align">دقيق القمح</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script>
+		$('.recipe-info-button').click(function(){
+			$('.ingredient-popup-card').slideDown();
+			$('.ingredient-popup-hiddendiv').show();
+		});
+		$('.ingredient-popup-hiddendiv').click(function(){
+			$('.ingredient-popup-card').slideUp();
+			$('.ingredient-popup-hiddendiv').hide();
+		});
+	</script>
+	  
+    </body>
+  </html>
