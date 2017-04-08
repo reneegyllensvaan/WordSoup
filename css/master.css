@@ -1,3 +1,14 @@
-
+.lexicon-image {
+  position: relative; }
+  .lexicon-image .correct_choice,
+  .lexicon-image .wrong_choice {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding-top: 3em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%; }
 
 /*# sourceMappingURL=master.css.map */
