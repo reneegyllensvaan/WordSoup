@@ -11,6 +11,10 @@
 .instruction {
   border: 1px solid #acacac; }
 
+.row.instruction {
+  margin-left: 0;
+  margin-right: 0; }
+
 .nav-wrapper {
   padding-left: 15px; }
 
