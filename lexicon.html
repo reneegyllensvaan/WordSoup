@@ -27,6 +27,7 @@
             else
                 para.className = "wrong_choice";
             ev.target.parentElement.appendChild(para);
+            document.getElementById(data).style.display = 'none';
         }
 	</script>
 </head>
@@ -38,16 +39,16 @@
 	</div>
 </nav>
 
-<table border="1">
-	<tr>
-		<td ondrop="drop(event, 'apple')" ondragover="allowDrop(event)"><img src="image/apple.jpg"   with="150" height="150"/></td>
-		<td ondrop="drop(event, 'orange')" ondragover="allowDrop(event)"><img src="image/orange.jpg" with="150" height="150"/></td>
-	</tr>
-	<tr>
-		<td ondrop="drop(event, 'grapes')" ondragover="allowDrop(event)"><img src="image/grapes.jpg" with="150" height="150"/></td>
-		<td ondrop="drop(event, 'plum')" ondragover="allowDrop(event)"><img src="image/plum.jpg"   with="150" height="150"/></td>
-	</tr>
-</table>
+<div class="section center-align">
+	<div class="row">
+		<div class="col s6 lexicon-image" ondrop="drop(event, 'apple')" ondragover="allowDrop(event)"><img src="image/apple.jpg" height="150"/></div>
+		<div class="col s6 lexicon-image" ondrop="drop(event, 'orange')" ondragover="allowDrop(event)"><img src="image/orange.jpg" height="150"/></div>
+	</div>
+	<div class="row">
+		<div class="col s6 lexicon-image" ondrop="drop(event, 'grapes')" ondragover="allowDrop(event)"><img src="image/grapes.jpg" height="150"/></div>
+		<div class="col s6 lexicon-image" ondrop="drop(event, 'plum')" ondragover="allowDrop(event)"><img src="image/plum.jpg" height="150"/></div>
+	</div>
+</div>
 
 <div class="wordclound">
 	<div id="apple" class="word" draggable="true" ondragstart="drag(event)">apple</div>
