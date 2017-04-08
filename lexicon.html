@@ -1,0 +1,61 @@
+<head>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/master.css"  media="screen,projection"/>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	<link rel="stylesheet" href="css/lexicon.css">
+	<script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev,correct) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var para = document.createElement("b");
+            para.innerHTML = document.getElementById(data).innerHTML;
+            if (data == correct)
+                para.className = "correct_choice";
+            else
+                para.className = "wrong_choice";
+            ev.target.parentElement.appendChild(para);
+        }
+	</script>
+</head>
+<body>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#" class="brand-logo">WordSoup</a>
+	</div>
+</nav>
+
+<table border="1">
+	<tr>
+		<td ondrop="drop(event, 'apple')" ondragover="allowDrop(event)"><img src="image/apple.jpg"   with="150" height="150"/></td>
+		<td ondrop="drop(event, 'orange')" ondragover="allowDrop(event)"><img src="image/orange.jpg" with="150" height="150"/></td>
+	</tr>
+	<tr>
+		<td ondrop="drop(event, 'grapes')" ondragover="allowDrop(event)"><img src="image/grapes.jpg" with="150" height="150"/></td>
+		<td ondrop="drop(event, 'plum')" ondragover="allowDrop(event)"><img src="image/plum.jpg"   with="150" height="150"/></td>
+	</tr>
+</table>
+
+<div class="wordclound">
+	<div id="apple" class="word" draggable="true" ondragstart="drag(event)">apple</div>
+	<div id="orange" class="word" draggable="true" ondragstart="drag(event)">orange</div>
+	<div id="ketchup" class="word" draggable="true" ondragstart="drag(event)">ketchup</div>
+	<div id="plum" class="word" draggable="true" ondragstart="drag(event)">plum</div>
+	<div id="grapes" class="word" draggable="true" ondragstart="drag(event)">grapes</div>
+	<div id="wine" class="word" draggable="true" ondragstart="drag(event)">wine</div>
+	<div id="cheese" class="word" draggable="true" ondragstart="drag(event)">cheese</div>
+</div>
+</body>

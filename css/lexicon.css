@@ -1,0 +1,22 @@
+.wordclound {
+	margin-top: 20;
+	padding: 10;
+	border: 1px solid;
+	width: 400
+}
+
+.word {
+	padding: 2;
+	margin: 2;
+	border: 1px solid;
+	background: silver;
+	display:inline-block
+}
+
+.correct_choice {
+	color: green
+}
+
+.wrong_choice {
+	color: red
+}
