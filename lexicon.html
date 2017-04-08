@@ -9,24 +9,12 @@
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
+
 	<link rel="stylesheet" href="css/lexicon.css">
-	<script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
-
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
-
-        function drop(ev,correct) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            word_card = document.getElementById(data);
-            word_card.className += ' ' + (data == correct ? 'correct_choice' : 'wrong_choice');
-            ev.target.parentElement.appendChild(word_card);
-        }
-	</script>
+	<script src="js/lexicon.js"></script>
 </head>
 <body>
 
@@ -43,24 +31,24 @@
 
 <div class="section center-align">
 	<div class="row">
-		<div class="col s6 lexicon-image" ondrop="drop(event, 'apple')" ondragover="allowDrop(event)"><img src="image/apple.jpg"></div>
-		<div class="col s6 lexicon-image" ondrop="drop(event, 'orange')" ondragover="allowDrop(event)"><img src="image/orange.jpg"></div>
+		<div class="col s6 lexicon-image" data-word="apple"><img src="image/apple.jpg"></div>
+		<div class="col s6 lexicon-image" data-word="orange"><img src="image/orange.jpg"></div>
 	</div>
 	<div class="row">
-		<div class="col s6 lexicon-image" ondrop="drop(event, 'grapes')" ondragover="allowDrop(event)"><img src="image/grapes.jpg"></div>
-		<div class="col s6 lexicon-image" ondrop="drop(event, 'plum')" ondragover="allowDrop(event)"><img src="image/plum.jpg"></div>
+		<div class="col s6 lexicon-image" data-word="grapes"><img src="image/grapes.jpg"></div>
+		<div class="col s6 lexicon-image" data-word="plum"><img src="image/plum.jpg"></div>
 	</div>
 </div>
 
 <div class="row">
 	<div class="col s12">
-	<div id="apple" class="word card" draggable="true" ondragstart="drag(event)">apple</div>
-	<div id="orange" class="word card" draggable="true" ondragstart="drag(event)">orange</div>
-	<div id="ketchup" class="word card" draggable="true" ondragstart="drag(event)">ketchup</div>
-	<div id="plum" class="word card" draggable="true" ondragstart="drag(event)">plum</div>
-	<div id="grapes" class="word card" draggable="true" ondragstart="drag(event)">grapes</div>
-	<div id="wine" class="word card" draggable="true" ondragstart="drag(event)">wine</div>
-	<div id="cheese" class="word card" draggable="true" ondragstart="drag(event)">cheese</div>
+		<div data-word="apple" class="word card">apple</div>
+		<div data-word="orange" class="word card">orange</div>
+		<div data-word="ketchup" class="word card">ketchup</div>
+		<div data-word="plum" class="word card">plum</div>
+		<div data-word="grapes" class="word card">grapes</div>
+		<div data-word="wine" class="word card">wine</div>
+		<div data-word="cheese" class="word card">cheese</div>
 	</div>
 </div>
 </body>
