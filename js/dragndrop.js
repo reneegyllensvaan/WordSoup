@@ -37,7 +37,7 @@ $(document).ready(function($) {
             if (isAllFinished) {
                 $modal = $('<div class="popup-blur"><div class="card popup-card"><div class="card-content"></div></div></div>');
                 $modal.find('.card-content').append($('<p>Du hade ' + score + ' rätt</p>'));
-                $modal.find('.card').append($('<div class="card-action"><a href="exercise-words.html"><i class="fa fa-arrow-left"></i> Tillbaka</a> <a href="gaps.html">Next<i class="fa fa-arrow-right"></i></a></div>'));
+                $modal.find('.card').append($('<div class="card-action"><a href="exercise-words.html"><i class="fa fa-arrow-left"></i>Tillbaka</a><a href="gaps.html">Nästa<i class="fa fa-arrow-right" style="float:right; padding-top:2px"></i></a></div>'));
                 $(game).append($modal);
             }
         }
