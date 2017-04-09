@@ -61,6 +61,8 @@
 
 .nav-wrapper {
   padding-left: 15px; }
+  .nav-wrapper i {
+    font-size: 2.1rem; }
 
 .recipe-heading {
   font-size: 18px; }
