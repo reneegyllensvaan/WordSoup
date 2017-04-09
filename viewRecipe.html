@@ -117,6 +117,7 @@
 				if (currentInstruction == 0) {
 					step.translation_human_full.forEach(function(seg) {
 						var translation = seg.split(',');
+						console.log(seg);
 						$('#instruction-text-'+currentInstruction).append('<font class="translated-word" data-translation="'+translation[0]+'">'+translation[1]+' </font>');
 					});
 				} else {
@@ -127,7 +128,7 @@
 
 
 			$('.translated-word').click(function() {
-				if ($(this).data("translation" != "")) {
+				if ($(this).data("translation") != "") {
 					console.log($(this).data('translation'));
 					var popName = 'pop-'+Math.floor(Math.random()*1000);
 					$(this).append('<div class="word-pop teal white-text" id="'+popName+'">'+$(this).data('translation')+'</div>');
@@ -162,6 +163,10 @@
 			});
 
 			$('.ingredient-popup-hiddendiv').click(function(){
+				$('.ingredient-popup-card').slideUp();
+				$('.ingredient-popup-hiddendiv').hide();
+			});
+			$('.ingredient-popup-card').click(function(){
 				$('.ingredient-popup-card').slideUp();
 				$('.ingredient-popup-hiddendiv').hide();
 			});

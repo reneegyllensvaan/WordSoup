@@ -1,15 +1,15 @@
-{
+var recipe = {
    "name":"Chokladbollar",
    "global_img":"chokladbollar.jpg",
    "focus_vocabulary":[
-      "smör",
-      "strösocker",
-      "vaniljsocker",
-      "snabbkaffepulver",
-      "vatten",
-      "kakao",
-      "havregryn",
-      "kokosflingor"
+		{"swedish": "smör", "arabic": "زبدة"},
+		{"swedish": "strösocker", "arabic": "سكر"},
+		{"swedish": "vaniljsocker", "arabic": "الفانيليا"},
+		{"swedish": "snabbkaffepulver", "arabic": "قهوة"},
+		{"swedish": "vatten", "arabic": "ماء"},
+		{"swedish": "kakao", "arabic": "كاكاو"},
+		{"swedish": "havregryn", "arabic": "دقيق الشوفان"},
+		{"swedish": "kokosflingor", "arabic": "جوز الهند"}
    ],
    "steps":[
       {
