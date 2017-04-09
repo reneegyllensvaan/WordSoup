@@ -68,15 +68,15 @@
 	  
 	<div class="card ingredient-popup-card red lighten-4">
 		<div class="card-image">
-			<img src="http://www.sandt.nu/wp-content/uploads/2013/10/GF-mj%C3%B6l.jpg">
+			<img id="ingredient-popup-image" src="http://www.sandt.nu/wp-content/uploads/2013/10/GF-mj%C3%B6l.jpg">
 		</div>
 		<div class="card-content">
 			<div class="row">
 				<div class="col s6">
-					<p class="swedish left-align">Vetemjöl</p>
+					<p class="swedish left-align" id="ingredient-popup-name-swedish"></p>
 				</div>
 				<div class="col s6">
-					<p class="arabic right-align">دقيق القمح</p>
+					<p class="arabic right-align" id="ingredient-popup-name-arabic"></p>
 				</div>
 			</div>
 		</div>
@@ -90,7 +90,7 @@
 			recipe.steps.forEach(function(step) {
 				step.ingredients.forEach(function(ingredient) {
 					if (listedIngredients.indexOf(ingredient.item) == -1 && ingredient.item != "") {
-						$('#ingredients').append('<li class="collection-item">' + ingredient.quantity + ' ' + ingredient.item + '<a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="'+ingredient.type+'" >zoom_in</i></a></li>');
+						$('#ingredients').append('<li class="collection-item">' + ingredient.quantity + ' ' + ingredient.item + '<a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="'+ingredient.item+'" >zoom_in</i></a></li>');
 						listedIngredients.push(ingredient.item);
 					}
 					
@@ -137,9 +137,22 @@
 			});
 			
 			$('.recipe-info-button').click(function(){
-				$('.ingredient-popup-card').slideDown();
-				$('.ingredient-popup-hiddendiv').show();
+				$('#ingredient-popup-image').attr('src', "image/" + $(this).data("ingredient-name") + ".jpg");
+				var tmpImg = new Image() ;
+				tmpImg.src = $('#ingredient-popup-image').attr('src') ;
+				var thisHandle = $(this);
+				tmpImg.onload = function() {
+					$('#ingredient-popup-name-swedish').text(thisHandle.data("ingredient-name").charAt(0).toUpperCase() + thisHandle.data("ingredient-name").slice(1));
+					recipe.focus_vocabulary.forEach(function(pair) {
+						if (pair.swedish == thisHandle.data("ingredient-name")) {
+							$('#ingredient-popup-name-arabic').text(pair.arabic);
+						}
+					});
+					$('.ingredient-popup-card').slideDown();
+					$('.ingredient-popup-hiddendiv').show();
+				} ;
 			});
+			
 			$('.ingredient-popup-hiddendiv').click(function(){
 				$('.ingredient-popup-card').slideUp();
 				$('.ingredient-popup-hiddendiv').hide();
