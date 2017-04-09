@@ -41,6 +41,17 @@
   left: 0;
   z-index: 1000; }
 
+.translated-word {
+  position: relative; }
+
+.word-pop {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  padding: 2px 4px 2px 4px;
+  border-radius: 7px; }
+
 .lexicon-image {
   position: relative; }
   .lexicon-image .correct_choice,

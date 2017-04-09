@@ -1,4 +1,4 @@
-{
+var recipe = {
   "name": "Chokladbollar",
   "global_img": "chokladbollar.jpg",
   "focus_vocabulary": [
