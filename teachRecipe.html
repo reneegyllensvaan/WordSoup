@@ -8,7 +8,7 @@
 
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	  <link rel="stylesheet" type="text/css" href="css/master.css" />
+	    <link rel="stylesheet" type="text/css" href="css/master.css" />
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,7 +25,7 @@
 			<div class="nav-wrapper">
 				<div class="left">
 					<a href="recipe-menu.html">
-						<i class="medium material-icons">skip_previous</i>
+						<i class="fa fa-arrow-left"></i>
 					</a>
 				</div>
 				<span class="recipe-heading">Pannkakor med sylt</span>
@@ -41,23 +41,12 @@
 		<div class="container ingredients-container">
 
 		<div class="row">
-			<div class="col s8">
-				<h4>Ingredienser</h4>
-			</div>
-			<div class="col s4 right-align">
-				<a href="lexicon.html">
-					<i class="medium material-icons">play_arrow</i>
-				</a>
+			<div class="col s12">
+				<h4>Ord</h4>
 			</div>
 		</div>
 		<ul class="collection" id="ingredients">
 		</ul>
-
-
-
-
-
-
 		</div>
 
 		</div>
@@ -78,8 +67,10 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
+  <div class="row">
+    <a class="col s12 waves-effect waves-light btn"><i class="material-icons right">games</i>Träna ord</a>
+  </div>
 
 	<script>
 		console.log(recipe);
@@ -87,13 +78,19 @@
 		$(document).ready(function() {
 			recipe.steps.forEach(function(step) {
 				step.ingredients.forEach(function(ingredient) {
+
 					if (listedIngredients.indexOf(ingredient.item) == -1 && ingredient.item != "") {
-						$('#ingredients').append('<li class="collection-item">' + ingredient.item + '<a href="image/'+ ingredient.item + '.jpg " class="secondary-content"><img data-ingredient-name="'+ingredient.type+'" ></a></li>');
+            var translation = null;
+            recipe.focus_vocabulary.forEach(function(seg) {
+              if (seg.swedish == ingredient.item) {
+                translation = seg.arabic;
+              }
+            });
+						$('#ingredients').append('<li class="collection-item"> <font class="translated-word" data-translation="'+translation+'">'+ingredient.item+' </font> <img src="image/'+ingredient.item+'.jpg" width="100%"></li>');
 						listedIngredients.push(ingredient.item);
 					}
 				});
 			});
-
 
 			$('.translated-word').click(function() {
 				console.log($(this).data('translation'));
