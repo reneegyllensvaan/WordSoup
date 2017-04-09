@@ -35,7 +35,7 @@
 			</div>
 		</nav>
 	
-	<div class="train-recipe-button" href="exercise-words.html"> <a class="btn teal waves-effect waves-light" href="exercise-words.html"> <font>Träna ord</font> <img class="valign-center" style="width: 20px;height:20px;top: 13%" src="image/dumbbell.png"></a> </div>
+	<div class="train-recipe-button"> <a class="btn teal waves-effect waves-light" href="exercise-words.html"> <font>Träna ord</font> <img class="valign-center" style="width: 20px;height:20px;top: 13%" src="image/dumbbell.png"></a> </div>
 
 	  <div class="ingredient-popup-hiddendiv"></div>
 
@@ -160,6 +160,10 @@
 			});
 
 			$('.ingredient-popup-hiddendiv').click(function(){
+				$('.ingredient-popup-card').slideUp();
+				$('.ingredient-popup-hiddendiv').hide();
+			});
+			$('.ingredient-popup-card').click(function(){
 				$('.ingredient-popup-card').slideUp();
 				$('.ingredient-popup-hiddendiv').hide();
 			});
