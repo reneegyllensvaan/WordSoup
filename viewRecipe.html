@@ -115,7 +115,7 @@
 				});
 
 				if (currentInstruction == 0) {
-					step.translation_google.forEach(function(seg) {
+					step.translation_human_full.forEach(function(seg) {
 						var translation = seg.split(',');
 						$('#instruction-text-'+currentInstruction).append('<font class="translated-word" data-translation="'+translation[0]+'">'+translation[1]+' </font>');
 					});
@@ -127,19 +127,21 @@
 
 
 			$('.translated-word').click(function() {
-				console.log($(this).data('translation'));
-				var popName = 'pop-'+Math.floor(Math.random()*1000);
-				$(this).append('<div class="word-pop teal white-text" id="'+popName+'">'+$(this).data('translation')+'</div>');
-				$('#'+popName).fadeIn();
-				$(this).css('background-color','#ffff00');
-				var translatedWord = $(this);
-				window.setTimeout(function() {
-					translatedWord.css('background-color','#ffffff');
-					$('#'+popName).fadeOut();
-				}, 2000);
-				window.setTimeout(function() {
-					$('#'+popName).remove();
-				}, 3000);
+				if ($(this).data("translation" != "")) {
+					console.log($(this).data('translation'));
+					var popName = 'pop-'+Math.floor(Math.random()*1000);
+					$(this).append('<div class="word-pop teal white-text" id="'+popName+'">'+$(this).data('translation')+'</div>');
+					$('#'+popName).fadeIn();
+					$(this).css('background-color','#ffff00');
+					var translatedWord = $(this);
+					window.setTimeout(function() {
+						translatedWord.css('background-color','#ffffff');
+						$('#'+popName).fadeOut();
+					}, 2000);
+					window.setTimeout(function() {
+						$('#'+popName).remove();
+					}, 3000);
+				}
 			});
 
 			$('.recipe-info-button').click(function(){
