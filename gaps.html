@@ -14,7 +14,7 @@
 	<script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 	<script src="js/jquery.ui.touch-punch.min.js"></script>
 
-	<script src="js/gaps.js"></script>
+	<script src="js/dragndrop.js"></script>
 </head>
 <body>
 
@@ -30,12 +30,12 @@
 </nav>
 
 <div class="container">
-    <div class="section">
+    <div class="section dragndrop-game gaps-game">
         <div class="row">
             <div class="col s12 instruction instruction-gapped z-depth-1">
                 <div class="row">
                     <div class="col s8">
-                        <p>Mät upp smör, strösocker och vaniljsocker i en bunke. Låt stå framme i rumstemperatur tills <span class="word-gap" data-word="smöret"></span> blivit rumsvarmt. Skär gärna smöret i mindre bitar så går det fort. Vispa till en jämn smet med elvisp.</p>
+                        <p>Mät upp smör, strösocker och vaniljsocker i en bunke. Låt stå framme i rumstemperatur tills <span class="word-drop" data-word="smöret"></span> blivit rumsvarmt. Skär gärna smöret i mindre bitar så går det fort. Vispa till en jämn smet med elvisp.</p>
                     </div>
                     <div class="col s4">
                         <div class="instruction-image-container" id="instruction-image-0">
@@ -46,15 +46,15 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <div data-word="vatten" class="word card">vatten</div>
+                <div data-word="havregryn" class="word card">havregryn</div>
+                <div data-word="smöret" class="word card">smöret</div>
+                <div data-word="kokosflingor" class="word card">kokosflingor</div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="row">
-	<div class="col s12 center-align">
-		<div data-word="vatten" class="word card">vatten</div>
-		<div data-word="havregryn" class="word card">havregryn</div>
-		<div data-word="smöret" class="word card">smöret</div>
-		<div data-word="kokosflingor" class="word card">kokosflingor</div>
-	</div>
-</div>
 </body>
