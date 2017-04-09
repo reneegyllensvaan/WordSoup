@@ -1,3 +1,42 @@
+.word {
+  padding: 2px 8px;
+  margin: 2px;
+  display: inline-block; }
+
+.correct_choice {
+  background-color: #9fa; }
+
+.wrong_choice {
+  background-color: #EF9A9A; }
+
+.lexicon-game .word-drop {
+  position: relative; }
+  .lexicon-game .word-drop img {
+    width: 100%; }
+  .lexicon-game .word-drop .word {
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.gaps-game .word-drop {
+  display: inline-block;
+  width: 8em;
+  height: 2em;
+  border-bottom: thin solid silver;
+  background-color: cornsilk;
+  vertical-align: bottom; }
+  .gaps-game .word-drop .word {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0; }
+
+.instruction-gapped {
+  line-height: 2em; }
+
 .inline-block {
   display: inline-block; }
 
@@ -51,17 +90,5 @@
   left: 0;
   padding: 2px 4px 2px 4px;
   border-radius: 7px; }
-
-.lexicon-image {
-  position: relative; }
-  .lexicon-image img {
-    width: 100%; }
-  .lexicon-image .word {
-    display: block;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=master.css.map */

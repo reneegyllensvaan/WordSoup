@@ -1,20 +1,21 @@
 <head>
 	<meta charset="UTF-8">
+	<title>WordSoup</title>
 
 	<!--Import Google Icon Font-->
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="css/master.css"  media="screen,projection"/>
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
 	<script src="js/jquery.ui.touch-punch.min.js"></script>
 
 	<link rel="stylesheet" href="css/lexicon.css">
-	<script src="js/lexicon.js"></script>
+	<script src="js/dragndrop.js"></script>
 </head>
 <body>
 
@@ -29,26 +30,28 @@
 	</div>
 </nav>
 
-<div class="section center-align">
+<div class="container">
+<div class="section center-align dragndrop-game lexicon-game">
 	<div class="row">
-		<div class="col s6 lexicon-image" data-word="apple"><img src="image/apple.jpg"></div>
-		<div class="col s6 lexicon-image" data-word="orange"><img src="image/orange.jpg"></div>
+		<div class="col s6 word-drop" data-word="apple"><img src="image/apple.jpg"></div>
+		<div class="col s6 word-drop" data-word="orange"><img src="image/orange.jpg"></div>
 	</div>
 	<div class="row">
-		<div class="col s6 lexicon-image" data-word="grapes"><img src="image/grapes.jpg"></div>
-		<div class="col s6 lexicon-image" data-word="plum"><img src="image/plum.jpg"></div>
+		<div class="col s6 word-drop" data-word="grapes"><img src="image/grapes.jpg"></div>
+		<div class="col s6 word-drop" data-word="plum"><img src="image/plum.jpg"></div>
 	</div>
+	<div class="row">
+		<div class="col s12">
+			<div data-word="apple" class="word card">apple</div>
+			<div data-word="orange" class="word card">orange</div>
+			<div data-word="ketchup" class="word card">ketchup</div>
+			<div data-word="plum" class="word card">plum</div>
+			<div data-word="grapes" class="word card">grapes</div>
+			<div data-word="wine" class="word card">wine</div>
+			<div data-word="cheese" class="word card">cheese</div>
+		</div>
+	</div>
+</div>
 </div>
 
-<div class="row">
-	<div class="col s12">
-		<div data-word="apple" class="word card">apple</div>
-		<div data-word="orange" class="word card">orange</div>
-		<div data-word="ketchup" class="word card">ketchup</div>
-		<div data-word="plum" class="word card">plum</div>
-		<div data-word="grapes" class="word card">grapes</div>
-		<div data-word="wine" class="word card">wine</div>
-		<div data-word="cheese" class="word card">cheese</div>
-	</div>
-</div>
 </body>

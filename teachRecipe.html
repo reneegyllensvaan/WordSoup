@@ -4,15 +4,15 @@
 		<meta charset="UTF-8">
 		<title>WordSoup</title>
       <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	  <link rel="stylesheet" type="text/css" href="css/master.css" />
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	  
+
 	  <script type="text/javascript" src="recipe.js"></script>
     </head>
 
@@ -20,7 +20,7 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-	  
+
 	  <nav>
 			<div class="nav-wrapper">
 				<div class="left">
@@ -33,13 +33,13 @@
 				</ul>
 			</div>
 		</nav>
-	  
+
 	  <div class="ingredient-popup-hiddendiv"></div>
-	  
+
 	  <div class="row">
 		<div class="col s12">
 		<div class="container ingredients-container">
-		
+
 		<div class="row">
 			<div class="col s8">
 				<h4>Ingredienser</h4>
@@ -52,38 +52,35 @@
 		</div>
 		<ul class="collection" id="ingredients">
 		</ul>
-		
 
-		<h4>Instruktioner </h4>
-		<div id="instructions">
-		
-		</div>
 
-		
+
+
+
 
 		</div>
 
 		</div>
 	</div>
-	  
-	  
+
+
 	<div class="card ingredient-popup-card red lighten-4">
 		<div class="card-image">
-			<img id="ingredient-popup-image" src="">
+			<img src="http://www.sandt.nu/wp-content/uploads/2013/10/GF-mj%C3%B6l.jpg">
 		</div>
 		<div class="card-content">
 			<div class="row">
 				<div class="col s6">
-					<p class="swedish left-align" id="ingredient-popup-name-swedish"></p>
+					<p class="swedish left-align">Vetemjöl</p>
 				</div>
 				<div class="col s6">
-					<p class="arabic right-align" id="ingredient-popup-name-arabic"></p>
+					<p class="arabic right-align">دقيق القمح</p>
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
-	
+
 	<script>
 		console.log(recipe);
 		var listedIngredients = [];
@@ -91,36 +88,13 @@
 			recipe.steps.forEach(function(step) {
 				step.ingredients.forEach(function(ingredient) {
 					if (listedIngredients.indexOf(ingredient.item) == -1 && ingredient.item != "") {
-						$('#ingredients').append('<li class="collection-item">' + ingredient.quantity + ' ' + ingredient.item + '<a href="#!" class="secondary-content"><i class="material-icons recipe-info-button" data-ingredient-name="'+ingredient.item+'" >zoom_in</i></a></li>');
+						$('#ingredients').append('<li class="collection-item">' + ingredient.item + '<a href="image/'+ ingredient.item + '.jpg " class="secondary-content"><img data-ingredient-name="'+ingredient.type+'" ></a></li>');
 						listedIngredients.push(ingredient.item);
 					}
-					
 				});
 			});
-			
-			var currentInstruction = 0;
-			recipe.steps.forEach(function(step) {
-				$('#instructions').append('<div class="row instruction z-depth-1" id="instruction-'+currentInstruction+'"> </div>');//make instruction step row
-				//make text container for instruction
-				$('#instruction-'+currentInstruction).append('<div class="col s8" id="instruction-text-'+currentInstruction+'"> </div>');
-				$('#instruction-'+currentInstruction).append('<div class="col s4 "><div class="instruction-image-container" id="instruction-image-'+currentInstruction+'"> </div></div> ');
-				
-				step.figures.forEach(function(figure) {
-					$('#instruction-image-'+currentInstruction).append('<img src="image/'+figure.img+'">');
-				});
-				
-				if (currentInstruction == 0) {
-					step.translation_google.forEach(function(seg) {
-						var translation = seg.split(',');
-						$('#instruction-text-'+currentInstruction).append('<font class="translated-word" data-translation="'+translation[0]+'">'+translation[1]+' </font>');
-					});
-				} else {
-					$('#instruction-text-'+currentInstruction).append(step.text);
-				}
-				currentInstruction++;
-			});
-			
-			
+
+
 			$('.translated-word').click(function() {
 				console.log($(this).data('translation'));
 				var popName = 'pop-'+Math.floor(Math.random()*1000);
@@ -136,33 +110,20 @@
 					$('#'+popName).remove();
 				}, 3000);
 			});
-			
+
 			$('.recipe-info-button').click(function(){
-				$('#ingredient-popup-image').attr('src', "image/" + $(this).data("ingredient-name") + ".jpg");
-				var tmpImg = new Image() ;
-				tmpImg.src = $('#ingredient-popup-image').attr('src') ;
-				var thisHandle = $(this);
-				tmpImg.onload = function() {
-					$('#ingredient-popup-name-swedish').text(thisHandle.data("ingredient-name").charAt(0).toUpperCase() + thisHandle.data("ingredient-name").slice(1));
-					recipe.focus_vocabulary.forEach(function(pair) {
-						if (pair.swedish == thisHandle.data("ingredient-name")) {
-							$('#ingredient-popup-name-arabic').text(pair.arabic);
-						}
-					});
-					$('.ingredient-popup-card').slideDown();
-					$('.ingredient-popup-hiddendiv').show();
-				} ;
+				$('.ingredient-popup-card').slideDown();
+				$('.ingredient-popup-hiddendiv').show();
 			});
-			
 			$('.ingredient-popup-hiddendiv').click(function(){
 				$('.ingredient-popup-card').slideUp();
 				$('.ingredient-popup-hiddendiv').hide();
 			});
 		});//end document ready
-		
-		
-		
+
+
+
 	</script>
-	  
+
     </body>
   </html>
