@@ -1,17 +1,3 @@
-.word {
-	padding: 2px 8px;
-	margin: 2px;
-	display:inline-block
-}
-
-.correct_choice {
-    background-color: #9fa;
-}
-
-.wrong_choice {
-    background-color: #EF9A9A;
-}
-
 .gap {
 	border: none;
 	border-bottom: 2px dashed black;
