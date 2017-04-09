@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+		<meta charset="UTF-8">
+		<title>WordSoup</title>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  <link rel="stylesheet" type="text/css" href="css/master.css" />
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	  <script type="text/javascript" src="recipe.js"></script>
+    </head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+	  <nav>
+			<div class="nav-wrapper">
+				<div class="left">
+					<a href="recipe-menu.html">
+						<i class="medium material-icons">skip_previous</i>
+					</a>
+				</div>
+				<span class="recipe-heading">Pannkakor med sylt</span>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+				</ul>
+			</div>
+		</nav>
+
+	  <div class="ingredient-popup-hiddendiv"></div>
+
+	  <div class="row">
+		<div class="col s12">
+		<div class="container ingredients-container">
+
+		<div class="row">
+			<div class="col s8">
+				<h4>Ingredienser</h4>
+			</div>
+			<div class="col s4 right-align">
+				<a href="lexicon.html">
+					<i class="medium material-icons">play_arrow</i>
+				</a>
+			</div>
+		</div>
+		<ul class="collection" id="ingredients">
+		</ul>
+
+
+
+
+
+
+		</div>
+
+		</div>
+	</div>
+
+
+	<div class="card ingredient-popup-card red lighten-4">
+		<div class="card-image">
+			<img src="http://www.sandt.nu/wp-content/uploads/2013/10/GF-mj%C3%B6l.jpg">
+		</div>
+		<div class="card-content">
+			<div class="row">
+				<div class="col s6">
+					<p class="swedish left-align">Vetemjöl</p>
+				</div>
+				<div class="col s6">
+					<p class="arabic right-align">دقيق القمح</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		console.log(recipe);
+		var listedIngredients = [];
+		$(document).ready(function() {
+			recipe.steps.forEach(function(step) {
+				step.ingredients.forEach(function(ingredient) {
+					if (listedIngredients.indexOf(ingredient.item) == -1 && ingredient.item != "") {
+						$('#ingredients').append('<li class="collection-item">' + ingredient.item + '<a href="image/'+ ingredient.item + '.jpg " class="secondary-content"><img data-ingredient-name="'+ingredient.type+'" ></a></li>');
+						listedIngredients.push(ingredient.item);
+					}
+				});
+			});
+
+
+			$('.translated-word').click(function() {
+				console.log($(this).data('translation'));
+				var popName = 'pop-'+Math.floor(Math.random()*1000);
+				$(this).append('<div class="word-pop teal white-text" id="'+popName+'">'+$(this).data('translation')+'</div>');
+				$('#'+popName).fadeIn();
+				$(this).css('background-color','#ffff00');
+				var translatedWord = $(this);
+				window.setTimeout(function() {
+					translatedWord.css('background-color','#ffffff');
+					$('#'+popName).fadeOut();
+				}, 2000);
+				window.setTimeout(function() {
+					$('#'+popName).remove();
+				}, 3000);
+			});
+
+			$('.recipe-info-button').click(function(){
+				$('.ingredient-popup-card').slideDown();
+				$('.ingredient-popup-hiddendiv').show();
+			});
+			$('.ingredient-popup-hiddendiv').click(function(){
+				$('.ingredient-popup-card').slideUp();
+				$('.ingredient-popup-hiddendiv').hide();
+			});
+		});//end document ready
+
+
+
+	</script>
+
+    </body>
+  </html>
