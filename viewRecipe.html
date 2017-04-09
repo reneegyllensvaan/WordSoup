@@ -117,9 +117,6 @@
 				if (currentInstruction == 0) {
 					step.translation_google.forEach(function(seg) {
 						var translation = seg.split(',');
-            if (translation[0].indexOf("______") >= 0) {
-              
-            }
 						$('#instruction-text-'+currentInstruction).append('<font class="translated-word" data-translation="'+translation[0]+'">'+translation[1]+' </font>');
 					});
 				} else {
