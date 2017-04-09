@@ -47,6 +47,11 @@
     width: 100%;
     height: auto; }
 
+#recipe-image {
+  display: block;
+  width: 100%;
+  height: auto; }
+
 .instruction {
   border: 1px solid #acacac; }
 
@@ -79,6 +84,17 @@
   top: 0;
   left: 0;
   z-index: 1000; }
+
+.train-recipe-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 5px 5px 5px 5px; }
+  .train-recipe-button .btn {
+    position: relative;
+    width: 100%; }
 
 .translated-word {
   position: relative; }
