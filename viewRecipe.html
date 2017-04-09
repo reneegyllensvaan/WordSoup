@@ -28,29 +28,29 @@
 						<i class="medium material-icons">skip_previous</i>
 					</a>
 				</div>
-				<span class="recipe-heading">Pannkakor med sylt</span>
+				<span class="recipe-heading" id="recipe-name"></span>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 				</ul>
 			</div>
 		</nav>
+		
+		<div class="train-recipe-button" href="exercise-words.html"> <a class="btn teal waves-effect waves-light" href="exercise-words.html"> Träna ord <span class="glyphicons glyphicons-dumbbell"></span></a> </div>
+		
+		
 	  
 	  <div class="ingredient-popup-hiddendiv"></div>
 	  
 	  <div class="row">
 		<div class="col s12">
 		<div class="container ingredients-container">
+			<img id="recipe-image"></img>
 		
-		<div class="row">
-			<div class="col s8">
-				<h4>Ingredienser</h4>
+			<div class="row">
+				<div class="col s8">
+					<h4>Ingredienser</h4>
+				</div>
 			</div>
-			<div class="col s4 right-align">
-				<a href="lexicon.html">
-					<i class="medium material-icons">play_arrow</i>
-				</a>
-			</div>
-		</div>
-		<ul class="collection" id="ingredients">
+		<ul class="collection z-depth-1" id="ingredients">
 		</ul>
 		
 
@@ -84,8 +84,12 @@
 		
 	</div>
 	
+	
+	
 	<script>
 		console.log(recipe);
+		$('#recipe-name').text(recipe.name);
+		$('#recipe-image').attr("src", "image/" + recipe.global_img);
 		var listedIngredients = [];
 		$(document).ready(function() {
 			recipe.steps.forEach(function(step) {
